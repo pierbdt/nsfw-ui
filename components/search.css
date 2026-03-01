@@ -1,0 +1,141 @@
+@layer components {
+  /* Container */
+  .search {
+    @apply relative w-full;
+  }
+
+  /* Input */
+  .search-input {
+    @apply w-full rounded-(--radius-xl) bg-muted border-none
+           pl-10 pr-10 py-2 text-sm
+           text-foreground placeholder:text-muted-foreground
+           focus:bg-background focus:ring-1 focus:ring-ring focus:outline-none
+           transition-colors
+           disabled:cursor-not-allowed disabled:opacity-50
+           sm:py-2.5;
+  }
+
+  /* Search icon (left side) */
+  .search-icon {
+    @apply absolute left-3 top-1/2 -translate-y-1/2
+           text-muted-foreground
+           pointer-events-none;
+  }
+
+  .search-icon svg {
+    @apply h-4 w-4;
+  }
+
+  /* Right-side actions slot (loading, clear, kbd hint) */
+  .search-actions {
+    @apply absolute inset-y-0 right-0 pr-3
+           flex items-center gap-1.5;
+  }
+
+  /* Suggestion dropdown */
+  .search-dropdown {
+    @apply absolute top-full left-0 right-0 mt-1.5
+           bg-background rounded-(--radius-lg)
+           border border-border shadow-lg
+           z-50 max-h-80 overflow-y-auto;
+  }
+
+  /* Suggestion item */
+  .search-item {
+    @apply flex items-center gap-3
+           px-3 py-2 text-sm cursor-pointer
+           transition-colors
+           hover:bg-accent
+           sm:px-4 sm:py-2.5;
+  }
+
+  .search-item-active {
+    @apply bg-accent;
+  }
+
+  /* Avatar in suggestion */
+  .search-item-avatar {
+    @apply h-8 w-8 rounded-full object-cover shrink-0 bg-muted;
+  }
+
+  /* Text content wrapper */
+  .search-item-content {
+    @apply flex flex-col min-w-0;
+  }
+
+  /* Main text */
+  .search-item-title {
+    @apply text-sm font-medium text-foreground truncate;
+  }
+
+  /* Secondary text (category, count, etc.) */
+  .search-item-meta {
+    @apply text-xs text-muted-foreground;
+  }
+
+  /* Right-side element (arrow icon, badge, etc.) */
+  .search-item-trailing {
+    @apply ml-auto shrink-0 text-muted-foreground;
+  }
+
+  .search-item-trailing svg {
+    @apply h-4 w-4;
+  }
+
+  /* Loading spinner */
+  .search-loading {
+    @apply animate-spin text-muted-foreground;
+  }
+
+  .search-loading svg {
+    @apply h-4 w-4;
+  }
+
+  /* Clear / X button */
+  .search-clear {
+    @apply text-muted-foreground hover:text-foreground
+           cursor-pointer transition-colors;
+  }
+
+  .search-clear svg {
+    @apply h-4 w-4;
+  }
+
+  /* Submit / search button (right side) */
+  .search-submit {
+    @apply text-muted-foreground hover:text-foreground
+           cursor-pointer transition-colors
+           p-1 -mr-1 rounded-(--radius-sm)
+           active:bg-accent;
+  }
+
+  .search-submit svg {
+    @apply h-4 w-4;
+  }
+
+  /* Empty state */
+  .search-empty {
+    @apply px-4 py-6 text-center text-sm text-muted-foreground;
+  }
+
+  /* Highlighted match text */
+  .search-mark {
+    @apply bg-transparent font-medium text-foreground;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 60%,
+      var(--color-warning, #f59e0b) 60%,
+      var(--color-warning, #f59e0b) 90%,
+      transparent 90%
+    );
+    background-size: 100% 100%;
+    padding: 0 1px;
+  }
+}
+
+/* Prevent iOS zoom on focus (font-size < 16px triggers zoom) */
+@media (max-width: 640px) {
+  .search-input {
+    font-size: 16px;
+  }
+}

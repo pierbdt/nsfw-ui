@@ -25,6 +25,7 @@
     <!-- Sidebar Nav -->
     <nav class="hidden md:block w-44 shrink-0 sticky top-16 self-start">
       <ul class="grid gap-0.5 text-sm">
+        <li><a href="#search" class="block px-3 py-1.5 rounded-(--radius-md) text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">Search</a></li>
         <li><a href="#buttons" class="block px-3 py-1.5 rounded-(--radius-md) text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">Buttons</a></li>
         <li><a href="#inputs" class="block px-3 py-1.5 rounded-(--radius-md) text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">Inputs</a></li>
         <li><a href="#cards" class="block px-3 py-1.5 rounded-(--radius-md) text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">Cards</a></li>
@@ -40,6 +41,190 @@
 
     <!-- Main Content -->
     <main class="flex-1 min-w-0 space-y-10 sm:space-y-14">
+
+      <!-- Search -->
+      <section id="search">
+        <h2 class="text-xl font-semibold tracking-tight mb-1 sm:text-2xl">Search</h2>
+        <p class="text-muted-foreground text-sm mb-6">Autocomplete search bar with suggestions dropdown. Pair with Alpine.js for behavior.</p>
+
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-sm font-medium text-muted-foreground mb-3">Search Input</h3>
+            <div class="rounded-(--radius-lg) border border-border p-4 sm:p-6">
+              <div class="search max-w-md mx-auto">
+                <div class="search-icon">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+                <input type="text" class="search-input" placeholder="Search profiles, users...">
+                <div class="search-actions">
+                  <button class="search-submit">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <pre class="mt-2 bg-zinc-950 text-zinc-300 rounded-(--radius-lg) p-3 text-xs overflow-x-auto sm:p-4"><code>&lt;div class="search"&gt;
+  &lt;div class="search-icon"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;input class="search-input" placeholder="Search..."&gt;
+  &lt;div class="search-actions"&gt;
+    &lt;button class="search-submit"&gt;&lt;svg&gt;...&lt;/svg&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-medium text-muted-foreground mb-3">With Suggestions Dropdown</h3>
+            <div class="rounded-(--radius-lg) border border-border p-4 sm:p-6">
+              <div class="search max-w-md mx-auto">
+                <div class="search-icon">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+                <input type="text" class="search-input" placeholder="Search profiles, users..." value="alex">
+                <div class="search-actions">
+                  <button class="search-clear">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                  </button>
+                </div>
+                <!-- Static dropdown preview -->
+                <div class="search-dropdown" style="position: relative; top: auto; margin-top: 0.375rem;">
+                  <div class="search-item search-item-active">
+                    <img class="search-item-avatar" src="https://i.pravatar.cc/100?u=20" alt="">
+                    <div class="search-item-content">
+                      <span class="search-item-title"><span class="search-mark">Alex</span>andra Rose</span>
+                      <span class="search-item-meta">Profile &middot; 12.4k followers</span>
+                    </div>
+                    <div class="search-item-trailing">
+                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </div>
+                  </div>
+                  <div class="search-item">
+                    <img class="search-item-avatar" src="https://i.pravatar.cc/100?u=21" alt="">
+                    <div class="search-item-content">
+                      <span class="search-item-title"><span class="search-mark">Alex</span> Morgan</span>
+                      <span class="search-item-meta">Profile &middot; 8.2k followers</span>
+                    </div>
+                    <div class="search-item-trailing">
+                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </div>
+                  </div>
+                  <div class="search-item">
+                    <div class="search-item-avatar flex items-center justify-center text-muted-foreground">
+                      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg>
+                    </div>
+                    <div class="search-item-content">
+                      <span class="search-item-title"><span class="search-mark">alex</span>andra</span>
+                      <span class="search-item-meta">Tag &middot; 342 posts</span>
+                    </div>
+                    <div class="search-item-trailing">
+                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <pre class="mt-2 bg-zinc-950 text-zinc-300 rounded-(--radius-lg) p-3 text-xs overflow-x-auto sm:p-4"><code>&lt;div class="search"&gt;
+  &lt;div class="search-icon"&gt;&lt;svg&gt;...&lt;/svg&gt;&lt;/div&gt;
+  &lt;input class="search-input" x-model="query"
+    @input.debounce.200ms="fetchSuggestions()"
+    @keydown.escape="showSuggestions = false"
+    @keydown.arrow-down.prevent="highlightNext()"
+    @keydown.arrow-up.prevent="highlightPrev()"
+    @keydown.enter.prevent="selectHighlighted()"&gt;
+  &lt;div class="search-actions"&gt;
+    &lt;span class="search-loading" x-show="loading"&gt;&lt;svg&gt;...&lt;/svg&gt;&lt;/span&gt;
+    &lt;button class="search-clear" x-show="query" @click="query = ''"&gt;&lt;svg&gt;...&lt;/svg&gt;&lt;/button&gt;
+    &lt;button class="search-submit" x-show="!query" @click="$refs.form.submit()"&gt;&lt;svg&gt;...&lt;/svg&gt;&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="search-dropdown" x-show="showSuggestions"&gt;
+    &lt;template x-for="(item, i) in suggestions"&gt;
+      &lt;div class="search-item"
+        :class="{ 'search-item-active': highlightedIndex === i }"&gt;
+        &lt;img class="search-item-avatar" :src="item.avatar"&gt;
+        &lt;div class="search-item-content"&gt;
+          &lt;span class="search-item-title" x-html="highlight(item.name)"&gt;&lt;/span&gt;
+          &lt;span class="search-item-meta" x-text="item.meta"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/template&gt;
+    &lt;div class="search-empty" x-show="!suggestions.length"&gt;
+      No results found.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-medium text-muted-foreground mb-3">Loading & Empty States</h3>
+            <div class="rounded-(--radius-lg) border border-border p-4 sm:p-6">
+              <div class="flex flex-col gap-6 sm:flex-row">
+                <!-- Loading state -->
+                <div class="search max-w-xs flex-1">
+                  <div class="search-icon">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                  </div>
+                  <input type="text" class="search-input" placeholder="Search..." value="loading...">
+                  <div class="search-actions">
+                    <span class="search-loading">
+                      <svg fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+                    </span>
+                  </div>
+                </div>
+                <!-- Empty state -->
+                <div class="search max-w-xs flex-1">
+                  <div class="search-icon">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                  </div>
+                  <input type="text" class="search-input" placeholder="Search..." value="xyzabc">
+                  <div class="search-actions">
+                    <button class="search-clear">
+                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                  </div>
+                  <div class="search-dropdown" style="position: relative; top: auto; margin-top: 0.375rem;">
+                    <div class="search-empty">No results found.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-medium text-muted-foreground mb-3">All Classes</h3>
+            <div class="rounded-(--radius-lg) border border-border overflow-hidden">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-border bg-muted/50">
+                    <th class="px-4 py-2 text-left font-medium">Class</th>
+                    <th class="px-4 py-2 text-left font-medium">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-border">
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search</td><td class="px-4 py-2 text-muted-foreground">Container (relative)</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-input</td><td class="px-4 py-2 text-muted-foreground">Styled input with icon padding</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-icon</td><td class="px-4 py-2 text-muted-foreground">Left icon (absolute)</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-actions</td><td class="px-4 py-2 text-muted-foreground">Right slot for loading/clear/kbd</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-dropdown</td><td class="px-4 py-2 text-muted-foreground">Suggestions dropdown</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-item</td><td class="px-4 py-2 text-muted-foreground">Suggestion row</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-item-active</td><td class="px-4 py-2 text-muted-foreground">Keyboard-highlighted item</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-item-avatar</td><td class="px-4 py-2 text-muted-foreground">Avatar thumbnail</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-item-content</td><td class="px-4 py-2 text-muted-foreground">Title + meta wrapper</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-item-title</td><td class="px-4 py-2 text-muted-foreground">Main text</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-item-meta</td><td class="px-4 py-2 text-muted-foreground">Secondary text</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-item-trailing</td><td class="px-4 py-2 text-muted-foreground">Right icon/badge</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-loading</td><td class="px-4 py-2 text-muted-foreground">Spinner</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-clear</td><td class="px-4 py-2 text-muted-foreground">Clear button</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-submit</td><td class="px-4 py-2 text-muted-foreground">Search submit button</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-empty</td><td class="px-4 py-2 text-muted-foreground">No results message</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.search-mark</td><td class="px-4 py-2 text-muted-foreground">Highlighted match text</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Buttons -->
       <section id="buttons">

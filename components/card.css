@@ -1,44 +1,42 @@
 @layer components {
   .card {
-    @apply bg-white rounded-(--radius-card) shadow-sm border border-gray-200
-           overflow-hidden;
+    @apply rounded-(--radius-lg) border border-border bg-background
+           text-foreground overflow-hidden;
   }
 
   .card-body {
-    @apply p-4 sm:p-6;
+    @apply p-4
+           sm:p-6;
   }
 
   .card-title {
-    @apply text-lg font-semibold text-gray-900;
+    @apply text-base font-semibold leading-none tracking-tight
+           sm:text-lg;
   }
 
   .card-subtitle {
-    @apply text-sm text-gray-500;
+    @apply text-sm text-muted-foreground;
   }
 
   .card-header {
-    @apply px-4 py-3 sm:px-6 border-b border-gray-200;
+    @apply flex flex-col gap-1.5 p-4
+           sm:p-6;
   }
 
   .card-footer {
-    @apply px-4 py-3 sm:px-6 border-t border-gray-200 bg-gray-50;
+    @apply flex items-center p-4
+           sm:p-6;
   }
 
-  .card-compact .card-body {
-    @apply p-3;
-  }
-
+  .card-compact .card-body,
   .card-compact .card-header,
   .card-compact .card-footer {
-    @apply px-3 py-2;
-  }
-
-  .card-bordered {
-    @apply border border-gray-200;
+    @apply p-3
+           sm:p-4;
   }
 
   .card-ghost {
-    @apply shadow-none border-none bg-transparent;
+    @apply border-none bg-transparent;
   }
 
   .card-image {

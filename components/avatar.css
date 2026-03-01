@@ -1,7 +1,7 @@
 @layer components {
   .avatar {
-    @apply inline-flex items-center justify-center rounded-full
-           bg-gray-200 overflow-hidden shrink-0;
+    @apply relative inline-flex items-center justify-center
+           rounded-full bg-muted overflow-hidden shrink-0;
   }
 
   .avatar-xs {
@@ -33,7 +33,7 @@
   }
 
   .avatar-placeholder {
-    @apply font-medium text-gray-500;
+    @apply font-medium text-muted-foreground;
   }
 
   .avatar-group {
@@ -41,22 +41,18 @@
   }
 
   .avatar-group .avatar {
-    @apply ring-2 ring-white;
-  }
-
-  .avatar-online {
-    @apply relative;
+    @apply ring-2 ring-background;
   }
 
   .avatar-online::after {
     content: "";
     @apply absolute bottom-0 right-0 block h-2.5 w-2.5
-           rounded-full bg-success ring-2 ring-white;
+           rounded-full bg-success ring-2 ring-background;
   }
 
   .avatar-offline::after {
     content: "";
     @apply absolute bottom-0 right-0 block h-2.5 w-2.5
-           rounded-full bg-gray-300 ring-2 ring-white;
+           rounded-full bg-zinc-300 ring-2 ring-background;
   }
 }

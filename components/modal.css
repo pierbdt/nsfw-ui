@@ -1,15 +1,18 @@
 @layer components {
   .modal-overlay {
-    @apply fixed inset-0 bg-gray-500/75 transition-opacity;
+    @apply fixed inset-0 z-50 bg-black/80;
   }
 
   .modal-container {
-    @apply fixed inset-0 overflow-y-auto px-4 py-6 sm:px-0 z-50;
+    @apply fixed inset-0 z-50 flex items-end justify-center
+           px-0 pb-0
+           sm:items-center sm:px-4 sm:pb-0;
   }
 
   .modal-content {
-    @apply mb-6 bg-white rounded-lg overflow-hidden shadow-xl
-           transform transition-all sm:w-full sm:mx-auto;
+    @apply w-full bg-background border border-border
+           rounded-t-(--radius-lg) shadow-lg
+           sm:rounded-(--radius-lg) sm:w-auto sm:mx-auto;
   }
 
   .modal-sm {
@@ -33,23 +36,33 @@
   }
 
   .modal-header {
-    @apply px-6 pt-6 pb-0;
+    @apply flex flex-col gap-1.5 p-4
+           sm:p-6;
   }
 
   .modal-body {
-    @apply p-6;
+    @apply px-4 pb-4
+           sm:px-6 sm:pb-6;
   }
 
   .modal-footer {
-    @apply px-6 py-4 bg-gray-100 flex justify-end gap-3;
+    @apply flex flex-col-reverse gap-2 p-4
+           sm:flex-row sm:justify-end sm:p-6;
   }
 
   .modal-title {
-    @apply text-lg font-medium text-gray-900;
+    @apply text-lg font-semibold leading-none tracking-tight;
+  }
+
+  .modal-description {
+    @apply text-sm text-muted-foreground;
   }
 
   .modal-close {
-    @apply absolute top-4 right-4 text-gray-400 hover:text-gray-500
-           focus:outline-none cursor-pointer;
+    @apply absolute right-4 top-4 rounded-(--radius-sm)
+           text-muted-foreground opacity-70 transition-opacity
+           hover:opacity-100
+           focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring
+           cursor-pointer;
   }
 }

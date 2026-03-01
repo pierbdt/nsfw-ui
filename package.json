@@ -1,7 +1,7 @@
 {
   "name": "nsfw-ui",
-  "version": "0.1.0",
-  "description": "A DaisyUI-style Tailwind CSS component library",
+  "version": "0.2.0",
+  "description": "A shadcn-inspired Tailwind CSS component library",
   "main": "index.css",
   "style": "index.css",
   "files": [

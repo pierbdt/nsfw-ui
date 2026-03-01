@@ -1,0 +1,62 @@
+@layer components {
+  .avatar {
+    @apply inline-flex items-center justify-center rounded-full
+           bg-gray-200 overflow-hidden shrink-0;
+  }
+
+  .avatar-xs {
+    @apply h-6 w-6;
+  }
+
+  .avatar-sm {
+    @apply h-8 w-8;
+  }
+
+  .avatar-md {
+    @apply h-10 w-10;
+  }
+
+  .avatar-lg {
+    @apply h-12 w-12;
+  }
+
+  .avatar-xl {
+    @apply h-16 w-16;
+  }
+
+  .avatar-2xl {
+    @apply h-24 w-24;
+  }
+
+  .avatar img {
+    @apply h-full w-full object-cover;
+  }
+
+  .avatar-placeholder {
+    @apply font-medium text-gray-500;
+  }
+
+  .avatar-group {
+    @apply flex -space-x-2;
+  }
+
+  .avatar-group .avatar {
+    @apply ring-2 ring-white;
+  }
+
+  .avatar-online {
+    @apply relative;
+  }
+
+  .avatar-online::after {
+    content: "";
+    @apply absolute bottom-0 right-0 block h-2.5 w-2.5
+           rounded-full bg-success ring-2 ring-white;
+  }
+
+  .avatar-offline::after {
+    content: "";
+    @apply absolute bottom-0 right-0 block h-2.5 w-2.5
+           rounded-full bg-gray-300 ring-2 ring-white;
+  }
+}

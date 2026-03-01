@@ -1,0 +1,61 @@
+@layer components {
+  .input {
+    @apply border-gray-300 rounded-(--radius-input) shadow-sm
+           focus:border-primary focus:ring-primary
+           disabled:opacity-50 disabled:bg-gray-100;
+  }
+
+  .input-error {
+    @apply border-red-500 text-red-600 focus:border-red-500 focus:ring-red-500;
+  }
+
+  .input-label {
+    @apply block font-medium text-sm text-gray-700;
+  }
+
+  .input-hint {
+    @apply text-sm text-gray-500 mt-1;
+  }
+
+  .input-error-message {
+    @apply text-sm text-red-600 mt-1;
+  }
+
+  .input-group {
+    @apply space-y-1;
+  }
+
+  .textarea {
+    @apply border-gray-300 rounded-(--radius-input) shadow-sm
+           focus:border-primary focus:ring-primary
+           disabled:opacity-50 disabled:bg-gray-100;
+  }
+
+  .select {
+    @apply border-gray-300 rounded-(--radius-input) shadow-sm
+           focus:border-primary focus:ring-primary
+           disabled:opacity-50 disabled:bg-gray-100;
+  }
+
+  .checkbox {
+    @apply rounded border-gray-300 text-primary shadow-sm
+           focus:ring-primary focus:ring-offset-0;
+  }
+
+  .radio {
+    @apply border-gray-300 text-primary shadow-sm
+           focus:ring-primary focus:ring-offset-0;
+  }
+
+  .toggle {
+    @apply relative inline-flex h-6 w-11 shrink-0 cursor-pointer
+           rounded-full border-2 border-transparent
+           bg-gray-200 transition-colors duration-200 ease-in-out
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .toggle:checked,
+  .toggle[aria-checked="true"] {
+    @apply bg-primary;
+  }
+}

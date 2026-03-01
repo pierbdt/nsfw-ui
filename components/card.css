@@ -1,0 +1,47 @@
+@layer components {
+  .card {
+    @apply bg-white rounded-(--radius-card) shadow-sm border border-gray-200
+           overflow-hidden;
+  }
+
+  .card-body {
+    @apply p-4 sm:p-6;
+  }
+
+  .card-title {
+    @apply text-lg font-semibold text-gray-900;
+  }
+
+  .card-subtitle {
+    @apply text-sm text-gray-500;
+  }
+
+  .card-header {
+    @apply px-4 py-3 sm:px-6 border-b border-gray-200;
+  }
+
+  .card-footer {
+    @apply px-4 py-3 sm:px-6 border-t border-gray-200 bg-gray-50;
+  }
+
+  .card-compact .card-body {
+    @apply p-3;
+  }
+
+  .card-compact .card-header,
+  .card-compact .card-footer {
+    @apply px-3 py-2;
+  }
+
+  .card-bordered {
+    @apply border border-gray-200;
+  }
+
+  .card-ghost {
+    @apply shadow-none border-none bg-transparent;
+  }
+
+  .card-image {
+    @apply w-full object-cover;
+  }
+}

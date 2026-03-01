@@ -1,0 +1,40 @@
+@layer components {
+  .dropdown {
+    @apply relative inline-block text-left;
+  }
+
+  .dropdown-menu {
+    @apply absolute z-50 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black/5
+           focus:outline-none;
+  }
+
+  .dropdown-menu-right {
+    @apply right-0 origin-top-right;
+  }
+
+  .dropdown-menu-left {
+    @apply left-0 origin-top-left;
+  }
+
+  .dropdown-content {
+    @apply py-1;
+  }
+
+  .dropdown-item {
+    @apply block w-full px-4 py-2 text-left text-sm text-gray-700
+           hover:bg-gray-100 focus:bg-gray-100 focus:outline-none
+           transition duration-150 ease-in-out;
+  }
+
+  .dropdown-item-active {
+    @apply bg-gray-100 text-gray-900;
+  }
+
+  .dropdown-divider {
+    @apply border-t border-gray-100 my-1;
+  }
+
+  .dropdown-header {
+    @apply px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider;
+  }
+}

@@ -26,6 +26,7 @@
     <nav class="hidden md:block w-44 shrink-0 sticky top-16 self-start">
       <ul class="grid gap-0.5 text-sm">
         <li><a href="#search" class="block px-3 py-1.5 rounded-(--radius-md) text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">Search</a></li>
+        <li><a href="#breadcrumbs" class="block px-3 py-1.5 rounded-(--radius-md) text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">Breadcrumbs</a></li>
         <li><a href="#buttons" class="block px-3 py-1.5 rounded-(--radius-md) text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">Buttons</a></li>
         <li><a href="#inputs" class="block px-3 py-1.5 rounded-(--radius-md) text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">Inputs</a></li>
         <li><a href="#cards" class="block px-3 py-1.5 rounded-(--radius-md) text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">Cards</a></li>
@@ -51,7 +52,7 @@
           <div>
             <h3 class="text-sm font-medium text-muted-foreground mb-3">Search Input</h3>
             <div class="rounded-(--radius-lg) border border-border p-4 sm:p-6">
-              <div class="search max-w-md mx-auto">
+              <div class="search">
                 <div class="search-icon">
                   <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 </div>
@@ -77,7 +78,7 @@
           <div>
             <h3 class="text-sm font-medium text-muted-foreground mb-3">With Suggestions Dropdown</h3>
             <div class="rounded-(--radius-lg) border border-border p-4 sm:p-6">
-              <div class="search max-w-md mx-auto">
+              <div class="search">
                 <div class="search-icon">
                   <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 </div>
@@ -219,6 +220,75 @@
                   <tr><td class="px-4 py-2 font-mono text-xs">.search-submit</td><td class="px-4 py-2 text-muted-foreground">Search submit button</td></tr>
                   <tr><td class="px-4 py-2 font-mono text-xs">.search-empty</td><td class="px-4 py-2 text-muted-foreground">No results message</td></tr>
                   <tr><td class="px-4 py-2 font-mono text-xs">.search-mark</td><td class="px-4 py-2 text-muted-foreground">Highlighted match text</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Breadcrumbs -->
+      <section id="breadcrumbs">
+        <h2 class="text-xl font-semibold tracking-tight mb-1 sm:text-2xl">Breadcrumbs</h2>
+        <p class="text-muted-foreground text-sm mb-6">Compact, mobile-first navigation breadcrumbs. Truncates long text on small screens.</p>
+
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-sm font-medium text-muted-foreground mb-3">With Chevron Separator</h3>
+            <div class="rounded-(--radius-lg) border border-border p-4 sm:p-6">
+              <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="#" class="breadcrumb-item">sextflirt.com</a>
+                <span class="breadcrumb-separator">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </span>
+                <a href="#" class="breadcrumb-item">Snapchat</a>
+                <span class="breadcrumb-separator">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </span>
+                <span class="breadcrumb-item-active">Girls</span>
+              </nav>
+            </div>
+            <pre class="mt-2 bg-zinc-950 text-zinc-300 rounded-(--radius-lg) p-3 text-xs overflow-x-auto sm:p-4"><code>&lt;nav class="breadcrumb" aria-label="Breadcrumb"&gt;
+  &lt;a href="/" class="breadcrumb-item"&gt;Home&lt;/a&gt;
+  &lt;span class="breadcrumb-separator"&gt;
+    &lt;svg&gt;...chevron...&lt;/svg&gt;
+  &lt;/span&gt;
+  &lt;a href="/snapchat/" class="breadcrumb-item"&gt;Snapchat&lt;/a&gt;
+  &lt;span class="breadcrumb-separator"&gt;
+    &lt;svg&gt;...chevron...&lt;/svg&gt;
+  &lt;/span&gt;
+  &lt;span class="breadcrumb-item-active"&gt;Girls&lt;/span&gt;
+&lt;/nav&gt;</code></pre>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-medium text-muted-foreground mb-3">With Slash Separator</h3>
+            <div class="rounded-(--radius-lg) border border-border p-4 sm:p-6">
+              <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="#" class="breadcrumb-item">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="#" class="breadcrumb-item">Categories</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-item-active">A Very Long Category Name That Truncates</span>
+              </nav>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-medium text-muted-foreground mb-3">All Classes</h3>
+            <div class="rounded-(--radius-lg) border border-border overflow-hidden">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-border bg-muted/50">
+                    <th class="px-4 py-2 text-left font-medium">Class</th>
+                    <th class="px-4 py-2 text-left font-medium">Description</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-border">
+                  <tr><td class="px-4 py-2 font-mono text-xs">.breadcrumb</td><td class="px-4 py-2 text-muted-foreground">Container (flex, gap, text-xs mobile / text-sm desktop)</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.breadcrumb-separator</td><td class="px-4 py-2 text-muted-foreground">Separator text or SVG chevron (auto-sizes svg to 12px)</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.breadcrumb-item</td><td class="px-4 py-2 text-muted-foreground">Clickable link (primary color, hover underline, truncates on mobile)</td></tr>
+                  <tr><td class="px-4 py-2 font-mono text-xs">.breadcrumb-item-active</td><td class="px-4 py-2 text-muted-foreground">Current page (foreground color, font-medium, truncates on mobile)</td></tr>
                 </tbody>
               </table>
             </div>
@@ -661,18 +731,6 @@
             </div>
           </div>
 
-          <div>
-            <h3 class="text-sm font-medium text-muted-foreground mb-3">Breadcrumbs</h3>
-            <div class="rounded-(--radius-lg) border border-border p-4 sm:p-6">
-              <nav class="breadcrumb">
-                <a href="#" class="breadcrumb-item">Home</a>
-                <span class="breadcrumb-separator">/</span>
-                <a href="#" class="breadcrumb-item">Users</a>
-                <span class="breadcrumb-separator">/</span>
-                <span class="breadcrumb-item-active">Profile</span>
-              </nav>
-            </div>
-          </div>
         </div>
       </section>
 

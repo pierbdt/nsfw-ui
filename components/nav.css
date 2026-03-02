@@ -31,19 +31,27 @@
   }
 
   .breadcrumb {
-    @apply flex items-center gap-1.5 text-sm text-muted-foreground;
+    @apply flex items-center gap-1 text-xs text-muted-foreground
+           sm:gap-1.5 sm:text-sm;
   }
 
   .breadcrumb-separator {
-    @apply text-muted-foreground/50;
+    @apply text-muted-foreground/40 shrink-0;
+  }
+
+  .breadcrumb-separator svg {
+    @apply h-3 w-3;
   }
 
   .breadcrumb-item {
-    @apply hover:text-foreground transition-colors;
+    @apply text-primary hover:text-primary/80 hover:underline
+           transition-colors truncate max-w-[120px]
+           sm:max-w-none;
   }
 
   .breadcrumb-item-active {
-    @apply text-foreground font-medium;
+    @apply text-foreground font-medium truncate max-w-[140px]
+           sm:max-w-none;
   }
 
   /* Tabs variant (shadcn-style) */

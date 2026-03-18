@@ -1,0 +1,99 @@
+@layer components {
+  /* ── Base tag ── */
+  .tag {
+    @apply inline-flex items-center gap-1.5
+           rounded-full px-3 py-1
+           text-xs font-medium
+           transition-all duration-200
+           cursor-pointer select-none
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1;
+  }
+
+  /* ── Paper (warm tones, rounded-lg) ── */
+  .tag-paper {
+    @apply rounded-lg bg-stone-50 text-stone-600 border border-stone-200
+           hover:text-stone-800;
+  }
+  .tag-paper-active {
+    @apply rounded-lg bg-stone-800 text-stone-100 border border-stone-800;
+  }
+  .tag-paper-warm {
+    @apply rounded-lg bg-amber-50 text-amber-800 border border-amber-200
+           hover:text-amber-900;
+  }
+  .tag-paper-rose {
+    @apply rounded-lg bg-rose-50 text-rose-800 border border-rose-200
+           hover:text-rose-900;
+  }
+
+  /* ── Mono (rounded-md, grey system, black active) ── */
+  .tag-mono {
+    @apply rounded-md bg-zinc-100 text-zinc-500 border border-zinc-200
+           px-2.5 py-0.5
+           hover:text-zinc-800 hover:border-zinc-400;
+  }
+  .tag-mono-active {
+    @apply rounded-md bg-zinc-900 text-white border border-zinc-900
+           px-2.5 py-0.5;
+  }
+
+  /* ── Blend (Paper warmth + Mono structure + Cool blue tint) ── */
+  .tag-blend {
+    @apply rounded-md bg-blue-50/60 text-slate-600 border border-blue-100
+           px-2.5 py-0.5
+           hover:text-slate-800 hover:border-blue-200;
+  }
+  .tag-blend-active {
+    @apply rounded-md bg-slate-800 text-blue-50 border border-slate-800
+           px-2.5 py-0.5;
+  }
+  .tag-blend-warm {
+    @apply rounded-md bg-amber-50/60 text-slate-600 border border-amber-100
+           px-2.5 py-0.5
+           hover:text-slate-800 hover:border-amber-200;
+  }
+  .tag-blend-rose {
+    @apply rounded-md bg-rose-50/60 text-slate-600 border border-rose-100
+           px-2.5 py-0.5
+           hover:text-slate-800 hover:border-rose-200;
+  }
+
+  /* ── Sizes ── */
+  .tag-sm {
+    @apply px-2 py-0.5 text-[0.65rem] gap-1;
+  }
+
+  .tag-lg {
+    @apply px-4 py-1.5 text-sm gap-2;
+  }
+
+  /* ── Tag with icon ── */
+  .tag-icon {
+    @apply w-3 h-3 shrink-0;
+  }
+
+  .tag-lg .tag-icon {
+    @apply w-3.5 h-3.5;
+  }
+
+  /* ── Removable (× button) ── */
+  .tag-remove {
+    @apply ml-0.5 -mr-1 inline-flex items-center justify-center
+           w-3.5 h-3.5 rounded-full
+           opacity-60 hover:opacity-100
+           transition-opacity;
+  }
+
+  .tag-lg .tag-remove {
+    @apply w-4 h-4;
+  }
+
+  /* ── Tag group ── */
+  .tag-group {
+    @apply flex flex-wrap gap-1.5;
+  }
+
+  .tag-group-lg {
+    @apply flex flex-wrap gap-2;
+  }
+}

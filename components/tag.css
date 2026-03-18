@@ -37,25 +37,25 @@
            px-2.5 py-0.5;
   }
 
-  /* ── Blend (Paper warmth + Mono structure + Cool blue tint) ── */
+  /* ── Blend (iOS-native feel, system rounded, subtle border) ── */
   .tag-blend {
-    @apply rounded-md bg-blue-50/60 text-slate-600 border border-blue-100
-           px-2.5 py-0.5
-           hover:text-slate-800 hover:border-blue-200;
+    @apply rounded-full bg-gray-100/90 text-gray-600 border border-gray-200/50
+           px-3 py-1 text-xs font-medium tracking-tight
+           hover:bg-gray-200/90 active:scale-95;
   }
   .tag-blend-active {
-    @apply rounded-md bg-slate-800 text-blue-50 border border-slate-800
-           px-2.5 py-0.5;
+    @apply rounded-full bg-blue-500 text-white border border-blue-600/30
+           px-3 py-1 text-xs font-semibold tracking-tight;
   }
   .tag-blend-warm {
-    @apply rounded-md bg-amber-50/60 text-slate-600 border border-amber-100
-           px-2.5 py-0.5
-           hover:text-slate-800 hover:border-amber-200;
+    @apply rounded-full bg-orange-100/80 text-orange-600 border border-orange-200/50
+           px-3 py-1 text-xs font-medium tracking-tight
+           hover:bg-orange-200/80 active:scale-95;
   }
   .tag-blend-rose {
-    @apply rounded-md bg-rose-50/60 text-slate-600 border border-rose-100
-           px-2.5 py-0.5
-           hover:text-slate-800 hover:border-rose-200;
+    @apply rounded-full bg-pink-100/80 text-pink-600 border border-pink-200/50
+           px-3 py-1 text-xs font-medium tracking-tight
+           hover:bg-pink-200/80 active:scale-95;
   }
 
   /* ── Sizes ── */
